@@ -70,7 +70,25 @@ navigation">
   <!-- /.container -->
   <script>
   (function() {
-
+    //var myObj = { "name":"John", "age":31, "city":"New York" };
+   
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "weather.json", true);
+    xhttp.onload = function() {
+      console.log(this.responseText);
+      //document.getElementById("weather").innerHTML = this.responseText;
+      let myObj = JSON.parse(this.responseText);
+      //console.log(myObj);
+      document.getElementById("weather").innerHTML = myObj.currentWeather.location;
+      }
+  
+    xhttp.send()
+    
+    
+    
+    
+    
+    
   })();
   </script>
 </body>

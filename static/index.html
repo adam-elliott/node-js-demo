@@ -79,7 +79,7 @@ navigation">
       //document.getElementById("weather").innerHTML = this.responseText;
       let myObj = JSON.parse(this.responseText);
       //console.log(myObj);
-      document.getElementById("weather").innerHTML = myObj.currentWeather.location;
+      document.getElementById("weather").innerHTML = '<h1>' + myObj.currentWeather.temperature + '</h1>' + '<p>' + myObj.currentWeather.text + '</p>' + '<h2 style="text-transform:uppercase; font-size:12px;">' + myObj.currentWeather.location + '</h2>';
       }
   
     xhttp.send()
